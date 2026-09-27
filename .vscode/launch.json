@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FloatChat: Debug Python API",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "backend.main:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8017"
+      ],
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "FloatChat: Debug frontend in Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:5177",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ]
+}

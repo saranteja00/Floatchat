@@ -1,0 +1,64 @@
+{
+  "snapshot_id": "argo-c3c036a19d04",
+  "method_version": "core-profile-v1",
+  "created_at": "2026-09-19T14:04:31.145815+00:00",
+  "title": "Indian Ocean \u00b7 INCOIS",
+  "attribution": "Argo (2000). Argo float data and metadata from Global Data Assembly Centres (Argo GDAC).",
+  "doi": "https://doi.org/10.17882/42182",
+  "sources": [
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902674/profiles/D1902674_047.nc",
+      "filename": "D1902674_047.nc",
+      "sha256": "ff186e34a074ef59c8afbd92e885ee8aa6682bd1c728202c0ee2a479e4bfabec",
+      "acquired_at": "2026-09-19T14:04:24.359398+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902674/profiles/D1902674_048.nc",
+      "filename": "D1902674_048.nc",
+      "sha256": "d406e90d9fbdb5e0ae4fa34a1d444f5e83c43b71f734a34f5d872c873649a6bc",
+      "acquired_at": "2026-09-19T14:04:25.562146+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902674/profiles/D1902674_049.nc",
+      "filename": "D1902674_049.nc",
+      "sha256": "e84890e5a5c3de564487342e9e70efd6042705c62b06938c6fdf7eaef4904d4f",
+      "acquired_at": "2026-09-19T14:04:26.380105+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902675/profiles/D1902675_048.nc",
+      "filename": "D1902675_048.nc",
+      "sha256": "d080be0a5b3872ff729bb10acc78763d5c8c78f9ae5286eec5b042c7ee428e21",
+      "acquired_at": "2026-09-19T14:04:27.127123+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902675/profiles/D1902675_049.nc",
+      "filename": "D1902675_049.nc",
+      "sha256": "a0c0d0d9cd7299a5672b6b486e6c7a2c1b052621a3494dfccdf72d82d0098b6e",
+      "acquired_at": "2026-09-19T14:04:27.962325+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902675/profiles/D1902675_050.nc",
+      "filename": "D1902675_050.nc",
+      "sha256": "34c0fe494cd58288a8c56fb450ae447cac5592b04c938cda96ae0d2e8b6caf35",
+      "acquired_at": "2026-09-19T14:04:28.851807+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902676/profiles/D1902676_047.nc",
+      "filename": "D1902676_047.nc",
+      "sha256": "e65d79bedac6e41783005cc01ba9828c07fd52934a405b36c0c78254f9de6b3f",
+      "acquired_at": "2026-09-19T14:04:29.627863+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902676/profiles/D1902676_048.nc",
+      "filename": "D1902676_048.nc",
+      "sha256": "f38d4c2e85ab3b3a55bfaad3f8b640ec76925a851c43254d55c756224be7283a",
+      "acquired_at": "2026-09-19T14:04:30.405380+00:00"
+    },
+    {
+      "url": "https://data-argo.ifremer.fr/dac/incois/1902676/profiles/D1902676_049.nc",
+      "filename": "D1902676_049.nc",
+      "sha256": "a828c3b41d1579e0ba275f1126c4d0885ece7e8e2dc2c96286f96e8a4ba11730",
+      "acquired_at": "2026-09-19T14:04:31.145815+00:00"
+    }
+  ]
+}

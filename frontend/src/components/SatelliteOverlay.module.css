@@ -1,0 +1,92 @@
+.controls {
+  margin-bottom: 8px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(15, 25, 35, 0.85);
+  border-radius: 10px;
+  border: 1px solid rgba(100, 180, 220, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #b8d4e3;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.label select,
+.label input[type="date"] {
+  background: rgba(20, 40, 60, 0.9);
+  color: #e0f0ff;
+  border: 1px solid rgba(100, 180, 220, 0.25);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.label select:hover,
+.label input[type="date"]:hover {
+  border-color: rgba(100, 200, 255, 0.5);
+}
+
+.label select:focus,
+.label input[type="date"]:focus {
+  border-color: #5bc0eb;
+  box-shadow: 0 0 6px rgba(91, 192, 235, 0.3);
+}
+
+.label input[type="range"] {
+  accent-color: #5bc0eb;
+  width: 90px;
+}
+
+.label input[type="checkbox"] {
+  accent-color: #5bc0eb;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.legend {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  padding: 4px 10px;
+  background: rgba(10, 20, 35, 0.7);
+  border-radius: 6px;
+  border: 1px solid rgba(100, 180, 220, 0.12);
+}
+
+.gradient {
+  width: 150px;
+  height: 12px;
+  background: linear-gradient(to right, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #8ab4cc;
+}
+
+.overlayImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 960px;
+  height: 430px;
+  pointer-events: none;
+  border-radius: 8px;
+}

@@ -1,0 +1,17 @@
+import QualityComparison from './QualityComparison';
+import type { QualityCounts, QueryResult } from '../types';
+const reasons: [keyof QualityCounts,string][] = [['metadata_qc','Position / time QC'],['pressure_or_depth','Pressure QC / unavailable depth'],['outside_depth','Outside requested depth'],['no_requested_values','No usable requested variable'],['retained','Retained levels']];
+export default function QualityPanel({result}:{result:QueryResult}) {
+  const audit=result.quality;
+  if(!audit)return null;
+  return <details className="quality-audit"><summary>Quality and sampling coverage</summary><p>Audit of the completed query: {result.counts.matched_profiles} matching profiles, {audit.source_levels.toLocaleString()} source levels. Counts include matched profiles with no usable observations.</p>
+    <div className="audit-totals">{reasons.map(([key,label])=><div key={key}><strong>{audit.totals[key].toLocaleString()}</strong><span>{label}</span></div>)}</div>
+    <p>Each source level is counted once, in the order shown. Depth exclusions are filter choices, not bad measurements. A level is retained if at least one requested variable is usable.</p>
+    <p>Data modes: {audit.modes.D??0} delayed (D) · {audit.modes.A??0} adjusted (A) · {audit.modes.R??0} real-time (R). Real-time values are preliminary and may be revised.</p>
+    <h3>Sampling available in this query</h3><div className="audit-table"><table className="data-table"><thead><tr><th>Float</th><th>Usable profiles</th><th>First / last observation, UTC</th><th>Largest gap</th></tr></thead><tbody>{audit.coverage.map(r=><tr key={r.wmo}><td>{r.wmo}</td><td>{r.usable_profiles}</td><td>{r.first?.slice(0,10)??'None'} / {r.last?.slice(0,10)??'None'}</td><td>{r.largest_gap_days===null?'Not enough timestamps':`${r.largest_gap_days.toFixed(1)} days`}</td></tr>)}</tbody></table></div><p>Gaps describe only retained profiles in this cached query. They may reflect missing historical downloads or filters; they do not prove a float stopped transmitting. These observations alone do not establish a marine heatwave or climate trend.</p>
+    <h3>Profile quality breakdown</h3><div className="audit-table"><table className="data-table"><thead><tr><th>Float / cycle</th><th>Mode</th><th>Source levels</th>{reasons.map(([key,label])=><th key={key}>{label}</th>)}</tr></thead><tbody>{audit.profiles.map(r=><tr key={r.profile_id}><td>{r.wmo} / {r.cycle}</td><td>{r.mode}</td><td>{r.source_levels}</td>{reasons.map(([key])=><td key={key}>{r.counts[key]}</td>)}</tr>)}</tbody></table></div>
+    <details><summary>Variable-specific counts</summary><p>After position/time QC, pressure/depth eligibility and the depth filter. Missing values take precedence over QC exclusions; variables are counted independently.</p><div className="audit-table"><table className="data-table"><thead><tr><th>Float / cycle</th><th>Variable</th><th>Valid</th><th>Missing</th><th>QC excluded</th></tr></thead><tbody>{audit.profiles.flatMap(r=>Object.entries(r.variables).map(([v,n])=><tr key={`${r.profile_id}-${v}`}><td>{r.wmo} / {r.cycle}</td><td>{v}</td><td>{n.valid}</td><td>{n.missing}</td><td>{n.qc_excluded}</td></tr>))}</tbody></table></div></details>
+    <QualityComparison key={result.query_id} result={result}/>
+    {!audit.profiles.length&&<p>No profiles match the float, date and geographic filters.</p>}<p>Audit method: {audit.method}. The query ZIP includes these counts in evidence.json.</p>
+  </details>;
+}

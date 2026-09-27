@@ -1,0 +1,9 @@
+fastapi>=0.115,<1
+uvicorn>=0.34,<1
+xarray>=2025.1,<2027
+netCDF4>=1.7,<2
+gsw>=3.6,<4
+numpy>=2,<3
+pytest>=8,<10
+httpx>=0.28,<1
+
